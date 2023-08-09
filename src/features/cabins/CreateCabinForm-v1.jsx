@@ -13,7 +13,9 @@ import { createCabin } from "../../services/apiCabins";
 
 function CreateCabinForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
+
   const { errors } = formState;
+  console.log(errors);
 
   const queryClient = useQueryClient();
 
