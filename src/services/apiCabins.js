@@ -12,15 +12,23 @@ export async function getCabins() {
 }
 
 export async function createCabin(newCabin) {
-  const { data, error } = await supabase
-    .from("cabins")
-    .insert([newCabin])
-    .select();
+  const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
+    "/",
+    ""
+  );
+
+  // https://upfajpmdrqtipqqhefxd.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg
+
+  // 1. Create cabin
+  const { data, error } = await supabase.from("cabins").insert([newCabin]);
 
   if (error) {
     console.error(error);
     throw new Error("Cabin could not be created");
   }
+
+  // 2. Upload image
+
   return data;
 }
 
