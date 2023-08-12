@@ -3,6 +3,7 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { createPortal } from "react-dom";
@@ -81,20 +82,23 @@ function Open({ children, opens: opensWindowName }) {
 
 const Window = ({ children, name }) => {
   const { openName, close } = useContext(ModalContext);
+  const ref = useRef();
 
   useEffect(() => {
-    function handleClick(e) {}
+    function handleClick(e) {
+      if (ref.current && !ref.current.contains(e.target)) close();
+    }
 
-    document.addEventListener("click", handleClick);
+    document.addEventListener("click", handleClick, true);
 
-    return () => document.removeEventListener("click", handleClick);
-  }, []);
+    return () => document.removeEventListener("click", handleClick, true);
+  }, [close]);
 
   if (name !== openName) return null;
 
   return createPortal(
     <Overlay>
-      <StyledModal>
+      <StyledModal ref={ref}>
         <Button onClick={close}>
           <HiXMark />
         </Button>
