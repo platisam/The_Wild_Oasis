@@ -48,3 +48,8 @@ const Button = styled.button`
     color: var(--color-grey-500);
   }
 `;
+
+const Modal = () => {
+  return <StyledModal>Modal</StyledModal>;
+};
+export default Modal;
