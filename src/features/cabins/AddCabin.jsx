@@ -3,7 +3,8 @@ import Button from "../../ui/Button";
 import CreateCabinForm from "./CreateCabinForm";
 import Modal from "../../ui/Modal";
 
-const AddCabin = () => {
+{
+  /*const AddCabin = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
@@ -18,5 +19,6 @@ const AddCabin = () => {
       )}
     </div>
   );
-};
+};*/
+}
 export default AddCabin;
