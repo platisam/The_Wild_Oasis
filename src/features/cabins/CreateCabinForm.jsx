@@ -49,7 +49,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   }
 
   function onError(errors) {
-    //console.log(errors);
+    // console.log(errors);
   }
 
   return (
@@ -122,7 +122,9 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
           id="description"
           defaultValue=""
           disabled={isWorking}
-          {...register("description", { required: "This field is required" })}
+          {...register("description", {
+            required: "This field is required",
+          })}
         />
       </FormRow>
 
@@ -130,7 +132,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         <FileInput
           id="image"
           accept="image/*"
-          type="file"
           {...register("image", {
             required: isEditSession ? false : "This field is required",
           })}
@@ -146,7 +147,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         >
           Cancel
         </Button>
-        <Button disabled={isCreating}>
+        <Button disabled={isWorking}>
           {isEditSession ? "Edit cabin" : "Create new cabin"}
         </Button>
       </FormRow>
