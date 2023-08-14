@@ -91,6 +91,7 @@ const CabinRow = ({ cabin }) => {
         <button disabled={isCreating} onClick={handleDuplicate}>
           <HiSquare2Stack />
         </button>
+
         <Modal>
           <Modal.Open opens="edit">
             <button>
@@ -119,9 +120,13 @@ const CabinRow = ({ cabin }) => {
           <Menus.Toggle id={cabin.id} />
 
           <Menus.List id={cabinId}>
-            <Menus.Button>Duplicate</Menus.Button>
-            <Menus.Button>Edit</Menus.Button>
-            <Menus.Button>Delete</Menus.Button>
+            <Menus.Button icon={<HiSquare2Stack />} onClick={handleDuplicate}>
+              Duplicate
+            </Menus.Button>
+
+            <Menus.Button icon={<HiPencil />}>Edit</Menus.Button>
+
+            <Menus.Button icon={<HiTrash />}>Delete</Menus.Button>
           </Menus.List>
         </Menus.Menu>
       </div>
