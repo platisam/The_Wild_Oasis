@@ -10,6 +10,7 @@ import { useCreateCabin } from "./useCreateCabin";
 import Modal from "../../ui/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
+import Menus from "../../ui/Menus";
 
 /*const TableRow = styled.div`
   display: grid;
@@ -90,7 +91,6 @@ const CabinRow = ({ cabin }) => {
         <button disabled={isCreating} onClick={handleDuplicate}>
           <HiSquare2Stack />
         </button>
-
         <Modal>
           <Modal.Open opens="edit">
             <button>
@@ -114,6 +114,16 @@ const CabinRow = ({ cabin }) => {
             />
           </Modal.Window>
         </Modal>
+
+        <Menus.Menu>
+          <Menus.Toggle id={cabin.id} />
+
+          <Menu.List id={cabinId}>
+            <Menu.Button>Duplicate</Menu.Button>
+            <Menu.Button>Edit</Menu.Button>
+            <Menu.Button>Delete</Menu.Button>
+          </Menu.List>
+        </Menus.Menu>
       </div>
     </Table.Row>
   );
