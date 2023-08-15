@@ -10,7 +10,7 @@ const CabinTableOperations = () => {
         options={[
           { value: "all", label: "ALL" },
           { value: "no-discount", label: "No discount" },
-          { value: "with-discount", label: "With-discount" },
+          { value: "with-discount", label: "With discount" },
         ]}
       />
 
