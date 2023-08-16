@@ -1,4 +1,6 @@
+import BookingDetail from "./BookingDetail";
+
 const Booking = () => {
-  return <div>Booking details</div>;
+  return <BookingDetail />;
 };
 export default Booking;
