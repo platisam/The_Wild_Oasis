@@ -6,14 +6,12 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import { login } from "../../services/apiAuth";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("jonas@example.com");
+  const [password, setPassword] = useState("pass0987");
 
   function handleSubmit(e) {
     e.preventDefault();
     if (!email || !password) return;
-
-    login({ email, password });
   }
 
   return (
