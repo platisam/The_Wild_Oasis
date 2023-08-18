@@ -22,6 +22,7 @@ function LoginForm() {
           onChange={(e) => setEmail(e.target.value)}
         />
       </FormRowVertical>
+
       <FormRowVertical label="Password">
         <Input
           type="password"
