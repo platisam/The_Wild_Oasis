@@ -1,5 +1,8 @@
+import { useUser } from "../features/authentication/useUser";
+
 const ProtectedRoute = ({ children }) => {
   // 1. Load the authenticated user
+  const { user, isLoading } = useUser();
 
   // 2. While loading, show a spinner
 
