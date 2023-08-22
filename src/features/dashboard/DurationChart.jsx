@@ -26,22 +26,22 @@ const startDataLight = [
   },
   {
     duration: "2 nights",
-    value: 0,
+    value: 3,
     color: "#f97316",
   },
   {
     duration: "3 nights",
-    value: 0,
+    value: 5,
     color: "#eab308",
   },
   {
     duration: "4-5 nights",
-    value: 0,
+    value: 4,
     color: "#84cc16",
   },
   {
     duration: "6-7 nights",
-    value: 0,
+    value: 7,
     color: "#22c55e",
   },
   {
@@ -51,7 +51,7 @@ const startDataLight = [
   },
   {
     duration: "15-21 nights",
-    value: 0,
+    value: 2,
     color: "#3b82f6",
   },
   {
@@ -130,3 +130,8 @@ function prepareData(startData, stays) {
 
   return data;
 }
+
+const DurationChart = ({ confirmedStays }) => {
+  return <ChartBox>Chart</ChartBox>;
+};
+export default DurationChart;
